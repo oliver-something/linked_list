@@ -17,7 +17,6 @@ class Path final {
 public:
     explicit Path() = default;
     Path(const Path<T>& other);
-    Node<T> * firstNode;
     void addNode(T data);
     bool deleteNode(T data);
     bool isEmpty();
@@ -27,6 +26,8 @@ public:
     [[nodiscard]] int size() const;
     void clear();
     ~Path();
+public:
+    Node<T> * firstNode;
 };
 
 #include "linked_list.tpp"
