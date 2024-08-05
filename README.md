@@ -25,6 +25,11 @@
     T & operator[](int index);
     // Added support for bubbleSort (Not optimized at all)
     void bubbleSort();
+    // Checks if linked list is sorted
+    bool isSorted();
+    // Binary Search support for the linked list (Not very optimized) O(N) worst case because of checking
+    // if the list sorted or not. also used [] operator which is not very optimized either.
+    int binarySearch(T);
     ~Path();
 ```
 
