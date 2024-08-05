@@ -28,7 +28,7 @@ public:
     T & operator[](int index);
     void bubbleSort();
     bool isSorted();
-    int binarySearch();
+    int binarySearch(T);
     ~Path();
 public:
     Node<T> * firstNode;

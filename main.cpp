@@ -50,6 +50,10 @@ int main() {
 
     path.bubbleSort();
     show(path);
+
+    auto item = path.binarySearch(90);
+    std::cout << "index : "<<  item << '\n';
+
     return 0;
 }
 

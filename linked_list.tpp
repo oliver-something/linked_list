@@ -142,10 +142,19 @@ bool Path<T>::isSorted() {
     return true;
 }
 
-//
-//int binarySearch() {
-//
-//}
+template<class T>
+int Path<T>::binarySearch(T item) {
+    if (!this->isSorted() and this->isEmpty()) return -1;
+    int left = 0;
+    int right = this->size() - 1;
+    while (left <= right) {
+        auto mid = left + (right - left) / 2;
+        if((*this)[mid] == item) return mid;
+        else if ((*this)[mid] < item) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
 
 template<class T>
 bool Path<T>::isEmpty() {
