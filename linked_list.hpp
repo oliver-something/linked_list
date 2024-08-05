@@ -26,7 +26,8 @@ public:
     [[nodiscard]] int size() const;
     void clear();
     T & operator[](int index);
-    void *bubbleSort();
+    void bubbleSort();
+
     ~Path();
 public:
     Node<T> * firstNode;

@@ -21,6 +21,10 @@
     [[nodiscard]] int size() const;
     // Cleans all nodes from the path and sets the first node to nullptr
     void clear();
+    // Added support for index [] operator (Not optimized) O(N)
+    T & operator[](int index);
+    // Added support for bubbleSort (Not optimized at all)
+    void bubbleSort();
     ~Path();
 ```
 

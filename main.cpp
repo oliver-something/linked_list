@@ -48,5 +48,8 @@ int main() {
     auto test = sumIntNodes(path);
     std::cout << test << '\n';
 
+    path.bubbleSort();
+    show(path);
     return 0;
 }
+

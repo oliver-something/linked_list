@@ -114,9 +114,20 @@ T& Path<T>::operator[](int index) {
 
 
 template<class T>
-void * Path<T>::bubbleSort() {
-    bool state = false;
-
+void Path<T>::bubbleSort() {
+    bool state;
+    for (int i = 0; i < this->size() - 1; ++i) {
+        state = false;
+        for (int j = 0; j < this->size() - 1 - i; ++j) {
+            if ((*this)[j] > (*this)[j + 1]) {
+                state = true;
+                auto temp = (*this)[j];
+                (*this)[j] = (*this)[j + 1];
+                (*this)[j + 1] = temp;
+            }
+        }
+        if(!state) break;
+    }
 }
 
 template<class T>
