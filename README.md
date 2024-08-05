@@ -15,7 +15,7 @@
     Node<T>* findNode(T data);
     // Copies another List into existing list (Deep Copy)
     Path<T>& operator=(const Path<T>& other);
-    // Appends another list into existing list
+    // Appends another list into existing list (Requires Optimization)
     void appendList(const Path<T> & other);
     // Returns the size of nodes
     [[nodiscard]] int size() const;
