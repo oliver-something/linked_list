@@ -131,6 +131,23 @@ void Path<T>::bubbleSort() {
 }
 
 template<class T>
+bool Path<T>::isSorted() {
+    // Empty List
+    if (firstNode == nullptr or firstNode->next == nullptr) return true;
+    auto current = firstNode;
+    while (current->next != nullptr) {
+        if (current->data > current->next->data) return false;
+        current = current->next;
+    }
+    return true;
+}
+
+//
+//int binarySearch() {
+//
+//}
+
+template<class T>
 bool Path<T>::isEmpty() {
     return firstNode == nullptr;
 }
