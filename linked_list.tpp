@@ -92,6 +92,34 @@ Node<T> *Path<T>::findNode(T data) {
 }
 
 template<class T>
+T& Path<T>::operator[](int index) {
+    if (index < 0) {
+        throw std::out_of_range("Index cannot be negative.");
+    }
+
+    Node<T>* current = firstNode;
+    int currentIndex = 0;
+
+    while (current != nullptr && currentIndex < index) {
+        current = current->next;
+        currentIndex++;
+    }
+
+    if (current == nullptr) {
+        throw std::out_of_range("Index out of range.");
+    }
+
+    return current->data;
+}
+
+
+template<class T>
+void * Path<T>::bubbleSort() {
+    bool state = false;
+
+}
+
+template<class T>
 bool Path<T>::isEmpty() {
     return firstNode == nullptr;
 }

@@ -25,6 +25,8 @@ public:
     void appendList(const Path<T> & other);
     [[nodiscard]] int size() const;
     void clear();
+    T & operator[](int index);
+    void *bubbleSort();
     ~Path();
 public:
     Node<T> * firstNode;
