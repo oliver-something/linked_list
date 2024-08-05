@@ -144,7 +144,7 @@ bool Path<T>::isSorted() {
 
 template<class T>
 int Path<T>::binarySearch(T item) {
-    if (!this->isSorted() and this->isEmpty()) return -1;
+    if (!this->isSorted() or this->isEmpty()) return -1;
     int left = 0;
     int right = this->size() - 1;
     while (left <= right) {
