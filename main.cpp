@@ -54,6 +54,13 @@ int main() {
     auto item = path.binarySearch(90);
     std::cout << "index : "<<  item << '\n';
 
+    // Creates the vector out of linked list
+    std::cout << "vector : " << '\n';
+    auto vec = path.toVector();
+    for (auto & i: vec){
+        std::cout << i << '\n';
+    }
+
     return 0;
 }
 
