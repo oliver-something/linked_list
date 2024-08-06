@@ -59,7 +59,6 @@ public:
     friend std::ostream & operator<<(std::ostream &os, const Song & song) {
         return os << "song : " << song.name << ", Artist: " << song.artist << '\n';
     }
-public:
     explicit Song(std::string name, std::string artist, int track): name(std::move(name)),
     artist(std::move(artist)),
     track_number(track) {}
