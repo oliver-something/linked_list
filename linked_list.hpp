@@ -2,6 +2,7 @@
 // Created by Oliver on 8/5/24.
 //
 #pragma one
+#include <vector>
 
 template<class T>
 class Node final {
@@ -29,6 +30,7 @@ public:
     void bubbleSort();
     bool isSorted();
     int binarySearch(T);
+    std::vector<T> toVector();
     ~Path();
 public:
     Node<T> * firstNode;

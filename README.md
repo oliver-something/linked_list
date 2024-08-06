@@ -30,6 +30,8 @@
     // Binary Search support for the linked list (Not very optimized) O(N) worst case because of checking
     // if the list sorted or not. also used [] operator which is not very optimized either.
     int binarySearch(T);
+    // Converts the Linked list to vector
+    std::vector<T> toVector();
     ~Path();
 ```
 

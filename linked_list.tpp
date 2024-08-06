@@ -198,6 +198,17 @@ void Path<T>::addNode(T data) {
 }
 
 template<class T>
+std::vector<T> Path<T>::toVector() {
+    auto * current = this->firstNode;
+    std::vector<T> vector;
+    while (current != nullptr) {
+        vector.emplace_back(current->data);
+        current = current->next;
+    }
+    return vector;
+}
+
+template<class T>
 Path<T>::~Path() {
     Node<T>* current = firstNode;
     while (current != nullptr) {
