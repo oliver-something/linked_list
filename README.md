@@ -33,6 +33,7 @@
     // Converts the Linked list to vector
     std::vector<T> toVector();
     // Insert to specific part of the list
+    // Insert from head is O(1) but anywhere else O(N)
     void insert(int index, T value);
     ~Path();
 ```
