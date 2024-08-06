@@ -14,7 +14,7 @@ public:
 };
 
 template<class T>
-class Path final {
+class Path {
 public:
     explicit Path() = default;
     Path(const Path<T>& other);

@@ -1,6 +1,28 @@
+#include <utility>
+
 #include "iostream"
 #include "linked_list.hpp"
+////////////////////////////////////////////////////////////////////////////////////////////////////
+class Song {
+    std::string name;
+    std::string artist;
+    int track_number;
+    // bunch of other fields
+public:
+    friend std::ostream & operator<<(std::ostream &os, const Song & song) {
+        return os << "song : " << song.name << ", Artist: " << song.artist << '\n';
+    }
+public:
+    explicit Song(std::string name, std::string artist, int track): name(std::move(name)),
+    artist(std::move(artist)),
+    track_number(track) {}
+};
 
+class Playlist : public Path<Song> {
+public:
+    explicit Playlist() = default;
+};
+////////////////////////////////////////////////////
 template<class T>
 void show(const Path<T> & path) {
     auto * current = path.firstNode;
@@ -65,6 +87,13 @@ int main() {
     path.insert(0, 14);
     show(path);
 
+    // Simple Real World Sample
+    Playlist playlist {};
+    playlist.addNode(Song("The New High", "Trevor Something", 1));
+    playlist.addNode(Song("You Are My Obsession", "Trevor Something", 4));
+    playlist.addNode(Song("Fade Away", "Trevor Something", 3));
+
+    show(playlist);
     return 0;
 }
 
