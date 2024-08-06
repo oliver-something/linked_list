@@ -32,6 +32,8 @@
     int binarySearch(T);
     // Converts the Linked list to vector
     std::vector<T> toVector();
+    // Insert to specific part of the list
+    void insert(int index, T value);
     ~Path();
 ```
 

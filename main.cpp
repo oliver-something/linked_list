@@ -60,6 +60,10 @@ int main() {
     for (auto & i: vec){
         std::cout << i << '\n';
     }
+    // Inserting 12 to the beginning.
+    std::cout << "Inserting 14 to the beginning\n";
+    path.insert(0, 14);
+    show(path);
 
     return 0;
 }

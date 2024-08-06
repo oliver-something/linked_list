@@ -1,3 +1,5 @@
+#include <cassert>
+
 template<class T>
 bool Path<T>::deleteNode(T data) {
     if (firstNode == nullptr) return false;
@@ -206,6 +208,35 @@ std::vector<T> Path<T>::toVector() {
         current = current->next;
     }
     return vector;
+}
+
+template<class T>
+void Path<T>::insert(int position, T value) {
+    assert(position >= 0);
+    if (position == 0 and firstNode != nullptr) {
+        firstNode = new Node<T>(value, firstNode);
+        return;
+    } else if (position == 0 and firstNode == nullptr) {
+        firstNode = new Node<T>(value);
+        return;
+    }
+
+    auto * current = firstNode;
+    Node<T> * previous = nullptr;
+    int index = 0;
+
+    while (current != nullptr and index < position) {
+        previous = current;
+        current = current->next;
+        index += 1;
+    }
+
+    if (index == position) {
+        auto * newNode = new Node<T>(value, current);
+        if (previous != nullptr) {
+            previous->next = newNode;
+        }
+    }
 }
 
 template<class T>

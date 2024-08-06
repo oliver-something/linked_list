@@ -31,6 +31,7 @@ public:
     bool isSorted();
     int binarySearch(T);
     std::vector<T> toVector();
+    void insert(int, T);
     ~Path();
 public:
     Node<T> * firstNode;
