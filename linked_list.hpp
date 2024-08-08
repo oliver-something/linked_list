@@ -18,7 +18,7 @@ class Path {
 public:
     explicit Path() = default;
     Path(const Path<T>& other);
-    void addNode(T data);
+    Node<T> * addNode(T data);
     bool deleteNode(T data);
     bool isEmpty();
     Node<T>* findNode(T data);

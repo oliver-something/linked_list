@@ -29,10 +29,14 @@ bool Path<T>::deleteNode(T data) {
 template<class T>
 void Path<T>::appendList(const Path<T> &other) {
     if (other.firstNode == nullptr) return;
-    auto * current = other.firstNode;
-    while (current != nullptr) {
-        addNode(current->data);
-        current = current->next;
+    auto * newNode = addNode(other.firstNode->data);
+    auto * otherCurrent = other.firstNode->next;
+    auto * current = newNode;
+
+    while (otherCurrent != nullptr) {
+        current->next = new Node<T>(otherCurrent->data);
+        current->next = current->next;
+        otherCurrent = otherCurrent->next;
     }
 }
 
@@ -186,7 +190,7 @@ void Path<T>::clear() {
 }
 
 template<class T>
-void Path<T>::addNode(T data) {
+Node<T> * Path<T>::addNode(T data) {
     auto * newNode = new Node<T>(data);
     if (!firstNode) {
         firstNode = newNode;
@@ -197,6 +201,7 @@ void Path<T>::addNode(T data) {
         }
         current->next = newNode;
     }
+    return newNode;
 }
 
 template<class T>
