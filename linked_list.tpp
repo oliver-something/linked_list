@@ -35,7 +35,7 @@ void Path<T>::appendList(const Path<T> &other) {
 
     while (otherCurrent != nullptr) {
         current->next = new Node<T>(otherCurrent->data);
-        current->next = current->next;
+        current = current->next;
         otherCurrent = otherCurrent->next;
     }
 }
