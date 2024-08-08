@@ -6,7 +6,7 @@
     // Creates a new linked list from existing list
     Path(const Path<T>& other);
     // Adds node to the path
-    void addNode(T data);
+    Node<T> * addNode(T data);
     // Deletes the node if found O(N)
     bool deleteNode(T data);
     // Checks if the list is empty
@@ -15,7 +15,7 @@
     Node<T>* findNode(T data);
     // Copies another List into existing list (Deep Copy)
     Path<T>& operator=(const Path<T>& other);
-    // Appends another list into existing list (Requires Optimization)
+    // Appends another list into existing list, it is now optimized for O(N)
     void appendList(const Path<T> & other);
     // Returns the size of nodes
     [[nodiscard]] int size() const;
